@@ -62,7 +62,6 @@
 		1A3BAC3C1A6524100065403A /* VVKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3BAC311A6524100065403A /* VVKQueue.m */; };
 		1A401D6C1A41FF79003B6E0A /* AVAssetWriterHapInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A401D681A41FF79003B6E0A /* AVAssetWriterHapInput.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A401D6D1A41FF79003B6E0A /* AVAssetWriterHapInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A401D691A41FF79003B6E0A /* AVAssetWriterHapInput.m */; };
-		1A42C2102BE97257001D8155 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A42C20F2BE97257001D8155 /* Sparkle.framework */; };
 		1A42C2112BE9728A001D8155 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A42C20F2BE97257001D8155 /* Sparkle.framework */; };
 		1A42C2122BE9728A001D8155 /* Sparkle.framework in copy frameworks */ = {isa = PBXBuildFile; fileRef = 1A42C20F2BE97257001D8155 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A499E682A324465003E19F0 /* HapMTLPixelBufferTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A499E672A324465003E19F0 /* HapMTLPixelBufferTexture.m */; };
@@ -189,6 +188,8 @@
 		1AF053C12B7E6BC100B1CD0D /* AVFExportSettingsAudioVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AF053B72B7E6BC100B1CD0D /* AVFExportSettingsAudioVC.xib */; };
 		840B32C72417D9DD007CA678 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840B32C62417D9DD007CA678 /* Metal.framework */; };
 		840B32CC2417E796007CA678 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840B32CB2417E796007CA678 /* MetalKit.framework */; };
+		F2ED0D712D245B1900EA7978 /* hap-in-avfoundation-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F2ED0D702D245B1900EA7978 /* hap-in-avfoundation-debug.xcconfig */; };
+		F2ED0D732D245B1E00EA7978 /* hap-in-avfoundation-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F2ED0D722D245B1E00EA7978 /* hap-in-avfoundation-release.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -454,6 +455,8 @@
 		840B32C62417D9DD007CA678 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		840B32CB2417E796007CA678 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		84F6F9362418F9D600E1C63D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		F2ED0D702D245B1900EA7978 /* hap-in-avfoundation-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "hap-in-avfoundation-debug.xcconfig"; sourceTree = "<group>"; };
+		F2ED0D722D245B1E00EA7978 /* hap-in-avfoundation-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "hap-in-avfoundation-release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,7 +500,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A42C2102BE97257001D8155 /* Sparkle.framework in Frameworks */,
 				1AB69BE32B7BDD790029FDEE /* libate.tbd in Frameworks */,
 				1A680E2A1A39F67E007678E5 /* CoreMedia.framework in Frameworks */,
 				1A1FBF042B83C9FB00EDAC0A /* Metal.framework in Frameworks */,
@@ -704,6 +706,8 @@
 		1A97F5A11A38ABBF00E0DC74 = {
 			isa = PBXGroup;
 			children = (
+				F2ED0D702D245B1900EA7978 /* hap-in-avfoundation-debug.xcconfig */,
+				F2ED0D722D245B1E00EA7978 /* hap-in-avfoundation-release.xcconfig */,
 				1A97F5AD1A38ABBF00E0DC74 /* HapInAVFoundation framework */,
 				1A3230151A3BA14000DDB2E0 /* HapInAVF Test App */,
 				1A3BABFE1A65239D0065403A /* AVF Batch Converter */,
@@ -1025,7 +1029,6 @@
 					};
 					1AABDE89207E544000D8F504 = {
 						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = KH97KZU7A7;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -1122,6 +1125,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2ED0D712D245B1900EA7978 /* hap-in-avfoundation-debug.xcconfig in Resources */,
+				F2ED0D732D245B1E00EA7978 /* hap-in-avfoundation-release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1423,7 +1428,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = KH97KZU7A7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1472,7 +1476,6 @@
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KH97KZU7A7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1642,13 +1645,14 @@
 		};
 		1A97F5C21A38ABBF00E0DC74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2ED0D702D245B1900EA7978 /* hap-in-avfoundation-debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_X86_VECTOR_INSTRUCTIONS = ssse3;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = KH97KZU7A7;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1680,14 +1684,15 @@
 		};
 		1A97F5C31A38ABBF00E0DC74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2ED0D722D245B1E00EA7978 /* hap-in-avfoundation-release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_X86_VECTOR_INSTRUCTIONS = ssse3;
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = KH97KZU7A7;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1731,12 +1736,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1761,12 +1764,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KH97KZU7A7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

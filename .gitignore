@@ -4,3 +4,6 @@
 xcuserdata
 profile
 DerivedData
+hap-in-avfoundation-debug.xcconfig
+hap-in-avfoundation-release.xcconfig
+build

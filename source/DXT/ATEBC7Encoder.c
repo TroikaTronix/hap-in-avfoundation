@@ -29,7 +29,7 @@ struct HapCodecATEBC7Encoder	{
 
 
 
-
+#if CAN_COMPILE_HAP7
 static void HapCodecATEBC7Destroy(HapCodecDXTEncoderRef encoder)
 {
 	struct HapCodecATEBC7Encoder	*recast = (struct HapCodecATEBC7Encoder*)encoder;
@@ -119,6 +119,7 @@ static int HapCodecATEBC7Encode(
 	
 	return 0;
 }
+#endif	// #if CAN_COMPILE_HAP7
 
 #if defined(DEBUG)
 static const char *HapCodecATEBC7Describe(HapCodecDXTEncoderRef encoder)
@@ -126,6 +127,8 @@ static const char *HapCodecATEBC7Describe(HapCodecDXTEncoderRef encoder)
 	return ((struct HapCodecATEBC7Encoder *)encoder)->description;
 }
 #endif
+
+#if CAN_COMPILE_HAP7
 
 HapCodecDXTEncoderRef HapCodecATEBC7EncoderCreate(OSType pixelFormat, double encodeQuality)
 {
@@ -177,3 +180,4 @@ HapCodecDXTEncoderRef HapCodecATEBC7EncoderCreate(OSType pixelFormat, double enc
 	return (HapCodecDXTEncoderRef)encoder;
 }
 
+#endif // #if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_15

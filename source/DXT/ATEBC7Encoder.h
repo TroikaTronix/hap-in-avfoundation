@@ -10,11 +10,14 @@
 #define ATEBC7Encoder_h
 
 #include "DXTEncoder.h"
+#include "HapCodecSubTypes.h"
 
 /*
 	- 'pixelFormat' is the pixel format of the BC7 texture to encode (like kHapCVPixelFormat_RGBA_BC7)
 	- 'decodeQuality' is a normalized value indicating the visual quality of the encode- 1 is "best quality", and will take longer and more closely resemble the input image than an encode of 0 quality.
 */
+#if CAN_COMPILE_HAP7
 HapCodecDXTEncoderRef HapCodecATEBC7EncoderCreate(OSType pixelFormat, double encodeQuality);
+#endif
 
 #endif /* ATEBC7Encoder_h */

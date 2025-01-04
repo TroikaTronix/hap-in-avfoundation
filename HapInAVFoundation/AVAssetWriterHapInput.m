@@ -185,6 +185,7 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 			exportTextureTypes[0] = HapTextureFormat_A_RGTC1;
 			exportTextureTypes[1] = 0;
 		}
+		#if CAN_COMPILE_HAP7
 		else if ([codecString isEqualToString:AVVideoCodecHap7Alpha])	{
 			hapExport = YES;
 			exportCodecType = kHap7AlphaCodecSubType;
@@ -194,6 +195,7 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 			exportTextureTypes[0] = HapTextureFormat_RGBA_BPTC_UNORM;
 			exportTextureTypes[1] = 0;
 		}
+		#endif
 		else if ([codecString isEqualToString:AVVideoCodecHapHDR])	{
 			hapExport = YES;
 			exportCodecType = kHapHDRRGBCodecSubType;
@@ -266,6 +268,7 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 					}
 					break;
 				}
+				#if CAN_COMPILE_HAP7
 				case kHap7AlphaCodecSubType:
 					//	if we made a DXT encoder, but the DXT encoder wasn't the ATE BC7 encoder, destroy the DXT encoder
 					if (dxtEncoder != NULL & HapCodecDXTEncoderGetDXTEncoderType(dxtEncoder) != HapDXTEncoderType_ATEBC7)	{
@@ -277,6 +280,7 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 						dxtEncoder = NULL;
 					}
 					break;
+				#endif
 				case kHapHDRRGBCodecSubType:
 				case kHapYCoCgCodecSubType:
 				case kHapYCoCgACodecSubType:
@@ -350,7 +354,9 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 			case kHapYCoCgCodecSubType:
 			case kHapYCoCgACodecSubType:
 			case kHapAOnlyCodecSubType:
+			#if CAN_COMPILE_HAP7
 			case kHap7AlphaCodecSubType:
+			#endif
 			case kHapHDRRGBCodecSubType:
 			//default:
 				break;
@@ -730,7 +736,9 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 								switch (self->exportCodecType) {
                                     case kHapAlphaCodecSubType:
                                     case kHapYCoCgACodecSubType:
+                                    #if CAN_COMPILE_HAP7
                                     case kHap7AlphaCodecSubType:
+                                    #endif
                                     case kHapHDRRGBCodecSubType:
                                         depth = 32;
                                         break;
@@ -1062,9 +1070,11 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 			break;
 		case kHapAOnlyCodecSubType:
 			break;
+		#if CAN_COMPILE_HAP7
 		case kHap7AlphaCodecSubType:
 			returnMe = HapCodecATEBC7EncoderCreate(exportPixelFormats[0], exportQuality);
 			break;
+		#endif
 		case kHapHDRRGBCodecSubType:
 			NSLog(@"********************** incomplete %s",__func__);
 			break;
@@ -1083,7 +1093,9 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 	switch (exportCodecType)	{
 		case kHapCodecSubType:
 		case kHapAlphaCodecSubType:
+		#if CAN_COMPILE_HAP7
 		case kHap7AlphaCodecSubType:
+		#endif
 		case kHapHDRRGBCodecSubType:
 			//	intentionally blank, these codecs do not require discrete alpha-channel encoding
 			break;

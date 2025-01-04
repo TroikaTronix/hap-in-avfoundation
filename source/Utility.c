@@ -92,10 +92,12 @@ unsigned long dxtBytesForDimensions(int width, int height, OSType codecSubType)
 	case kHapYCoCgACodecSubType:
 		length = roundUpToMultipleOf4(width) * roundUpToMultipleOf4(height);
 		break;
+	#if CAN_COMPILE_HAP7
 	case kHap7AlphaCodecSubType:
 	case kHapHDRRGBCodecSubType:
 		length = roundUpToMultipleOf4(width) * roundUpToMultipleOf4(height);
 		break;
+	#endif
 	}
 	return length;
 	

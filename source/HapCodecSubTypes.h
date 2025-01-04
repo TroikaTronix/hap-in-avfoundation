@@ -28,12 +28,25 @@
 #ifndef Hap_Codec_HapCodecSubTypes_h
 #define Hap_Codec_HapCodecSubTypes_h
 
+// conditional compile allows us to compile successfully if the
+// deployment target is set less than macOS 10.15.
+#ifndef MAC_OS_X_VERSION_10_15
+#define CAN_COMPILE_HAP7	0
+#elif MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_15
+#define CAN_COMPILE_HAP7	1
+#else
+#define CAN_COMPILE_HAP7	0
+#endif
+
+
 #define kHapCodecSubType 'Hap1'
 #define kHapAlphaCodecSubType 'Hap5'
 #define kHapYCoCgCodecSubType 'HapY'
 #define kHapYCoCgACodecSubType 'HapM'
 #define kHapAOnlyCodecSubType 'HapA'
+#if CAN_COMPILE_HAP7
 #define kHap7AlphaCodecSubType 'Hap7'
+#endif
 #define kHapHDRRGBCodecSubType 'HapH'
 
 #endif

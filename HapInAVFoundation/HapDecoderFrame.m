@@ -182,12 +182,14 @@ void CVPixelBuffer_FreeHapDecoderFrame(void *releaseRefCon, const void *baseAddr
 			//dxtPixelFormats[1] = 0;
 			//dxtMinDataSizes[1] = 0;
 			break;
+		#if CAN_COMPILE_HAP7
 		case kHap7AlphaCodecSubType:
 			//dxtPlaneCount = 1;
 			//dxtPixelFormats[0] = kHapCVPixelFormat_RGBA_BC7;
 			//dxtPixelFormats[1] = 0;
 			//dxtMinDataSizes[1] = 0;
 			break;
+		#endif
 		case kHapHDRRGBCodecSubType:
 			//dxtPlaneCount = 1;
 			//dxtPixelFormats[0] = XXX;

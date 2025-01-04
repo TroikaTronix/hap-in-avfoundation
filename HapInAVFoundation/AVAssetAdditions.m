@@ -37,7 +37,9 @@
 		case kHapYCoCgCodecSubType:
 		case kHapYCoCgACodecSubType:
 		case kHapAOnlyCodecSubType:
+		#if CAN_COMPILE_HAP7
 		case kHap7AlphaCodecSubType:
+		#endif
 		case kHapHDRRGBCodecSubType:
 			returnMe = YES;
 			break;

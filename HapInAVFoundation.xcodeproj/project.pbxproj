@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,10 +19,6 @@
 		1A05360C1A38CA11005B47BD /* DXTBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0535FE1A38CA11005B47BD /* DXTBlocks.h */; };
 		1A05360D1A38CA11005B47BD /* DXTBlocksSSSE3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0535FF1A38CA11005B47BD /* DXTBlocksSSSE3.c */; };
 		1A05360E1A38CA11005B47BD /* DXTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536001A38CA11005B47BD /* DXTEncoder.h */; };
-		1A05360F1A38CA11005B47BD /* GLDXTEncoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536011A38CA11005B47BD /* GLDXTEncoder.c */; };
-		1A0536101A38CA11005B47BD /* GLDXTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536021A38CA11005B47BD /* GLDXTEncoder.h */; };
-		1A0536111A38CA11005B47BD /* HapCodecGL.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536031A38CA11005B47BD /* HapCodecGL.c */; };
-		1A0536121A38CA11005B47BD /* HapCodecGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536041A38CA11005B47BD /* HapCodecGL.h */; };
 		1A0536131A38CA11005B47BD /* SquishEncoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536051A38CA11005B47BD /* SquishEncoder.c */; };
 		1A0536141A38CA11005B47BD /* SquishEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536061A38CA11005B47BD /* SquishEncoder.h */; };
 		1A0536151A38CA11005B47BD /* YCoCgDXT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536071A38CA11005B47BD /* YCoCgDXT.cpp */; };
@@ -74,7 +70,6 @@
 		1A5A4DE41A54A047005C961F /* AVAssetAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A5A4DE21A54A047005C961F /* AVAssetAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A5A4DE51A54A047005C961F /* AVAssetAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5A4DE31A54A047005C961F /* AVAssetAdditions.m */; };
 		1A60606C1A38D812008E693F /* PixelFormats.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A60606B1A38D812008E693F /* PixelFormats.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A60606E1A38D8D9008E693F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A60606D1A38D8D9008E693F /* OpenGL.framework */; };
 		1A6060701A38D8DE008E693F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A60606F1A38D8DE008E693F /* Accelerate.framework */; };
 		1A6060731A38D91A008E693F /* HapInAVFoundation_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 1A6060721A38D91A008E693F /* HapInAVFoundation_Prefix.pch */; };
 		1A6060751A38D929008E693F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6060741A38D929008E693F /* Carbon.framework */; };
@@ -118,10 +113,6 @@
 		1A6D0E5D207E49C9005CCB1A /* DXTBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0535FE1A38CA11005B47BD /* DXTBlocks.h */; };
 		1A6D0E5E207E49C9005CCB1A /* DXTBlocksSSSE3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0535FF1A38CA11005B47BD /* DXTBlocksSSSE3.c */; };
 		1A6D0E5F207E49C9005CCB1A /* DXTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536001A38CA11005B47BD /* DXTEncoder.h */; };
-		1A6D0E60207E49C9005CCB1A /* GLDXTEncoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536011A38CA11005B47BD /* GLDXTEncoder.c */; };
-		1A6D0E61207E49C9005CCB1A /* GLDXTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536021A38CA11005B47BD /* GLDXTEncoder.h */; };
-		1A6D0E62207E49C9005CCB1A /* HapCodecGL.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536031A38CA11005B47BD /* HapCodecGL.c */; };
-		1A6D0E63207E49C9005CCB1A /* HapCodecGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536041A38CA11005B47BD /* HapCodecGL.h */; };
 		1A6D0E64207E49C9005CCB1A /* SquishEncoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536051A38CA11005B47BD /* SquishEncoder.c */; };
 		1A6D0E65207E49C9005CCB1A /* SquishEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536061A38CA11005B47BD /* SquishEncoder.h */; };
 		1A6D0E66207E49C9005CCB1A /* YCoCgDXT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536071A38CA11005B47BD /* YCoCgDXT.cpp */; };
@@ -135,7 +126,6 @@
 		1A6D0E72207E4ACF005CCB1A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0518671A3E1DAB00FC80D2 /* CoreVideo.framework */; };
 		1A6D0E73207E4AE3005CCB1A /* libsquish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4D2CDB207E47CD003FE56B /* libsquish.a */; };
 		1A6D0E74207E4AE6005CCB1A /* libsnappy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4D2CD8207E47CD003FE56B /* libsnappy.a */; };
-		1A6D0E75207E4AED005CCB1A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A60606D1A38D8D9008E693F /* OpenGL.framework */; };
 		1A6D0E76207E4AF2005CCB1A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A60606F1A38D8DE008E693F /* Accelerate.framework */; };
 		1A6D0E77207E4AF9005CCB1A /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6060741A38D929008E693F /* Carbon.framework */; };
 		1A6D0E78207E4BA9005CCB1A /* HapInAVFoundation_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 1A6060721A38D91A008E693F /* HapInAVFoundation_Prefix.pch */; };
@@ -330,10 +320,6 @@
 		1A0535FE1A38CA11005B47BD /* DXTBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DXTBlocks.h; path = source/DXT/DXTBlocks.h; sourceTree = "<group>"; };
 		1A0535FF1A38CA11005B47BD /* DXTBlocksSSSE3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = DXTBlocksSSSE3.c; path = source/DXT/DXTBlocksSSSE3.c; sourceTree = "<group>"; };
 		1A0536001A38CA11005B47BD /* DXTEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DXTEncoder.h; path = source/DXT/DXTEncoder.h; sourceTree = "<group>"; };
-		1A0536011A38CA11005B47BD /* GLDXTEncoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = GLDXTEncoder.c; path = source/DXT/GLDXTEncoder.c; sourceTree = "<group>"; };
-		1A0536021A38CA11005B47BD /* GLDXTEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDXTEncoder.h; path = source/DXT/GLDXTEncoder.h; sourceTree = "<group>"; };
-		1A0536031A38CA11005B47BD /* HapCodecGL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HapCodecGL.c; path = source/DXT/HapCodecGL.c; sourceTree = "<group>"; };
-		1A0536041A38CA11005B47BD /* HapCodecGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HapCodecGL.h; path = source/DXT/HapCodecGL.h; sourceTree = "<group>"; };
 		1A0536051A38CA11005B47BD /* SquishEncoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = SquishEncoder.c; path = source/DXT/SquishEncoder.c; sourceTree = "<group>"; };
 		1A0536061A38CA11005B47BD /* SquishEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquishEncoder.h; path = source/DXT/SquishEncoder.h; sourceTree = "<group>"; };
 		1A0536071A38CA11005B47BD /* YCoCgDXT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YCoCgDXT.cpp; path = source/DXT/YCoCgDXT.cpp; sourceTree = "<group>"; };
@@ -485,7 +471,6 @@
 				1A6D0E71207E4AC6005CCB1A /* AVFoundation.framework in Frameworks */,
 				1A6D0E77207E4AF9005CCB1A /* Carbon.framework in Frameworks */,
 				1A6D0E76207E4AF2005CCB1A /* Accelerate.framework in Frameworks */,
-				1A6D0E75207E4AED005CCB1A /* OpenGL.framework in Frameworks */,
 				1A6D0E73207E4AE3005CCB1A /* libsquish.a in Frameworks */,
 				1A6D0E74207E4AE6005CCB1A /* libsnappy.a in Frameworks */,
 				1A6D0E72207E4ACF005CCB1A /* CoreVideo.framework in Frameworks */,
@@ -502,7 +487,6 @@
 				1A680E241A39CFFF007678E5 /* AVFoundation.framework in Frameworks */,
 				1A6060751A38D929008E693F /* Carbon.framework in Frameworks */,
 				1A6060701A38D8DE008E693F /* Accelerate.framework in Frameworks */,
-				1A60606E1A38D8D9008E693F /* OpenGL.framework in Frameworks */,
 				1A8904FD1A38D25400A6CE71 /* libsquish.dylib in Frameworks */,
 				1A97F5D61A38AD0700E0DC74 /* libsnappy.dylib in Frameworks */,
 				1ACF5DED1A3E41FF005DDF19 /* CoreVideo.framework in Frameworks */,
@@ -539,10 +523,6 @@
 				1A0535FE1A38CA11005B47BD /* DXTBlocks.h */,
 				1A0535FF1A38CA11005B47BD /* DXTBlocksSSSE3.c */,
 				1A0536001A38CA11005B47BD /* DXTEncoder.h */,
-				1A0536011A38CA11005B47BD /* GLDXTEncoder.c */,
-				1A0536021A38CA11005B47BD /* GLDXTEncoder.h */,
-				1A0536031A38CA11005B47BD /* HapCodecGL.c */,
-				1A0536041A38CA11005B47BD /* HapCodecGL.h */,
 				1A0536051A38CA11005B47BD /* SquishEncoder.c */,
 				1A0536061A38CA11005B47BD /* SquishEncoder.h */,
 				1A0536071A38CA11005B47BD /* YCoCgDXT.cpp */,
@@ -857,8 +837,6 @@
 				1A6D0E5D207E49C9005CCB1A /* DXTBlocks.h in Headers */,
 				1A6D0E5F207E49C9005CCB1A /* DXTEncoder.h in Headers */,
 				1A6D0E67207E49C9005CCB1A /* YCoCgDXT.h in Headers */,
-				1A6D0E61207E49C9005CCB1A /* GLDXTEncoder.h in Headers */,
-				1A6D0E63207E49C9005CCB1A /* HapCodecGL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -893,8 +871,6 @@
 				1A05360C1A38CA11005B47BD /* DXTBlocks.h in Headers */,
 				1A05360E1A38CA11005B47BD /* DXTEncoder.h in Headers */,
 				1A0536161A38CA11005B47BD /* YCoCgDXT.h in Headers */,
-				1A0536101A38CA11005B47BD /* GLDXTEncoder.h in Headers */,
-				1A0536121A38CA11005B47BD /* HapCodecGL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1201,12 +1177,10 @@
 				1A6D0E46207E49B1005CCB1A /* HapDecoderFrame.m in Sources */,
 				1A6D0E6B207E49D3005CCB1A /* squish-c.cpp in Sources */,
 				1A6D0E59207E49B7005CCB1A /* SquishRGTC1Decoder.c in Sources */,
-				1A6D0E60207E49C9005CCB1A /* GLDXTEncoder.c in Sources */,
 				1A4D2CDD207E499A003FE56B /* ImageMath.c in Sources */,
 				1A6D0E4A207E49B1005CCB1A /* AVAssetAdditions.m in Sources */,
 				1A6D0E5A207E49C1005CCB1A /* hap.c in Sources */,
 				1A6D0E57207E49B7005CCB1A /* Utility.m in Sources */,
-				1A6D0E62207E49C9005CCB1A /* HapCodecGL.c in Sources */,
 				1AAD10292B7FA853000B1C51 /* HapMetalDXTDecoder.m in Sources */,
 				1A4D2CDF207E499A003FE56B /* YCoCg.c in Sources */,
 				1A24F8E52B7BAA4F008F1B44 /* ATEBC7Encoder.c in Sources */,
@@ -1234,12 +1208,10 @@
 				1AB26ECC1A3B3AE1001360D7 /* HapDecoderFrame.m in Sources */,
 				1A0535FA1A38C9FD005B47BD /* squish-c.cpp in Sources */,
 				1AAE52E21CFDDB8B00BA5205 /* SquishRGTC1Decoder.c in Sources */,
-				1A05360F1A38CA11005B47BD /* GLDXTEncoder.c in Sources */,
 				1A0536211A38CA5D005B47BD /* ImageMath.c in Sources */,
 				1A5A4DE51A54A047005C961F /* AVAssetAdditions.m in Sources */,
 				1A97F5D21A38AC9800E0DC74 /* hap.c in Sources */,
 				1A0E542D1C85F809003EAED8 /* Utility.m in Sources */,
-				1A0536111A38CA11005B47BD /* HapCodecGL.c in Sources */,
 				1AAD10282B7FA853000B1C51 /* HapMetalDXTDecoder.m in Sources */,
 				1A0536231A38CA5D005B47BD /* YCoCg.c in Sources */,
 				1A24F8E42B7BAA4F008F1B44 /* ATEBC7Encoder.c in Sources */,

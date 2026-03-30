@@ -15,7 +15,8 @@ Squish produces nicer results but takes longer.
 We select the GPU when the quality setting is above "High"
 YCoCg encodes YCoCg in DXT and requires a shader to draw, and produces very high quality results
 */
-#include "GLDXTEncoder.h"
+// GLDXTEncoder removed — legacy OpenGL dependency eliminated
+// #include "GLDXTEncoder.h"
 #include "ATEBC7Encoder.h"
 #include "SquishEncoder.h"
 #include "YCoCg.h"
@@ -1058,10 +1059,7 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 	switch (exportCodecType)	{
 		case kHapCodecSubType:
 		case kHapAlphaCodecSubType:	{
-			if (exportHighQualityFlag)
-				returnMe = HapCodecSquishEncoderCreate(HapCodecSquishEncoderMediumQuality, exportPixelFormats[0]);
-			else
-				returnMe = HapCodecGLEncoderCreate((unsigned int)exportImgSize.width, (unsigned int)exportImgSize.height, exportPixelFormats[0]);
+			returnMe = HapCodecSquishEncoderCreate(HapCodecSquishEncoderMediumQuality, exportPixelFormats[0]);
 			break;
 		}
 		case kHapYCoCgCodecSubType:

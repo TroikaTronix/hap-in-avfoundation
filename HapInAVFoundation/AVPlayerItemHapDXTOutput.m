@@ -3,7 +3,6 @@
 #import "AVAssetAdditions.h"
 #import "PixelFormats.h"
 #import "HapPlatform.h"
-#import "HapCodecGL.h"
 #include "YCoCg.h"
 #include "YCoCgDXT.h"
 #include "SquishRGTC1Decoder.h"
@@ -658,36 +657,8 @@ void HapMTDecode(HapDecodeWorkFunction function, void *p, unsigned int count, vo
 							convMem = nil;
 						}
 					}
-					//	else it's a "normal" (non-YCoCg) DXT texture format, use the GL decoder
-					else if (dxtTextureFormats[0]==HapTextureFormat_RGB_DXT1 || dxtTextureFormats[0]==HapTextureFormat_RGBA_DXT5)	{
-						//	make a GL decoder
-						void			*glDecoder = HapCodecGLCreateDecoder(dxtImgSize.width, dxtImgSize.height, dxtTextureFormats[0]);
-						if (glDecoder != NULL)	{
-							//	decode the DXT data into the rgb buffer
-							//NSLog(@"\t\tcalling %ld with userInfo %@",rgbDataSize/(NSUInteger)dxtImgSize.height,[n userInfo]);
-							hapErr = HapCodecGLDecode(glDecoder,
-								(unsigned int)(rgbDataSize/(NSUInteger)dxtImgSize.height),
-								(rgbPixelFormat==kCVPixelFormatType_32BGRA) ? HapCodecGLPixelFormat_BGRA8 : HapCodecGLPixelFormat_RGBA8,
-								dxtDatas[0],
-								rgbData);
-							if (hapErr!=HapResult_No_Error)
-								NSLog(@"\t\terr %d at HapCodecGLDecoder() in %s",hapErr,__func__);
-							else	{
-								//NSLog(@"\t\tsuccessfully decoded to RGB data!");
-							}
-						
-							//	free the GL decoder
-							HapCodecGLDestroy(glDecoder);
-							glDecoder = NULL;
-						}
-					
-					}
-                    else if (dxtTextureFormats[0] == HapTextureFormat_A_RGTC1)    {
-                        unsigned int        bytesPerRow = (unsigned int)(rgbDataSize/(NSUInteger)dxtImgSize.height);
-                        HapCodecSquishRGTC1DecodeAsAlphaOnly(dxtDatas[0], rgbData, bytesPerRow, dxtImgSize.width, dxtImgSize.height);
-                    }
-                    else if (dxtTextureFormats[0] == HapTextureFormat_RGBA_BPTC_UNORM)	{
-                    	//unsigned int		bytesPerRow = (unsigned int)(rgbDataSize/(NSUInteger)dxtImgSize.height);
+					//	else it's a block-compressed texture format, use the Metal decoder
+					else if (dxtTextureFormats[0]==HapTextureFormat_RGB_DXT1 || dxtTextureFormats[0]==HapTextureFormat_RGBA_DXT5 || dxtTextureFormats[0]==HapTextureFormat_RGBA_BPTC_UNORM)	{
                     	@synchronized (self)	{
 							if (mtlDecoder == nil)	{
 								if (self.cmdQueue == nil)	{
@@ -699,11 +670,27 @@ void HapMTDecode(HapDecodeWorkFunction function, void *p, unsigned int count, vo
                     		id<MTLDevice>	device = self.cmdQueue.device;
 							
 							id<MTLCommandBuffer>	cmdBuffer = [self.cmdQueue commandBuffer];
-							
+
+							//	determine the Metal pixel format and bytes-per-block for this texture format
+							MTLPixelFormat	mtlPixelFormat;
+							size_t			bytesPerBlock;
+							if (dxtTextureFormats[0] == HapTextureFormat_RGB_DXT1)	{
+								mtlPixelFormat = MTLPixelFormatBC1_RGBA;
+								bytesPerBlock = 8;
+							}
+							else if (dxtTextureFormats[0] == HapTextureFormat_RGBA_DXT5)	{
+								mtlPixelFormat = MTLPixelFormatBC3_RGBA;
+								bytesPerBlock = 16;
+							}
+							else	{
+								mtlPixelFormat = MTLPixelFormatBC7_RGBAUnorm;
+								bytesPerBlock = 16;
+							}
+
 							//	move the dxt data into a dxt texture
 							MTLTextureDescriptor	*dxt_tex_desc = [[MTLTextureDescriptor alloc] init];
 							dxt_tex_desc.textureType = MTLTextureType2D;
-							dxt_tex_desc.pixelFormat = MTLPixelFormatBC7_RGBAUnorm;
+							dxt_tex_desc.pixelFormat = mtlPixelFormat;
 							dxt_tex_desc.width = dxtImgSize.width;
 							dxt_tex_desc.height = dxtImgSize.height;
 							dxt_tex_desc.depth = 1;
@@ -713,8 +700,8 @@ void HapMTDecode(HapDecodeWorkFunction function, void *p, unsigned int count, vo
 							id<MTLTexture>		dxt_tex = [device newTextureWithDescriptor:dxt_tex_desc];
 							
 							int		blocks_wide = dxtImgSize.width / 4;
-							size_t		dxt_bytes_per_row = blocks_wide * 128 / 8;
-							
+							size_t		dxt_bytes_per_row = blocks_wide * bytesPerBlock;
+
 							[dxt_tex
 								replaceRegion:MTLRegionMake2D(0,0,dxtImgSize.width,dxtImgSize.height)
 								mipmapLevel:0
@@ -761,6 +748,10 @@ void HapMTDecode(HapDecodeWorkFunction function, void *p, unsigned int count, vo
 							rgba_buffer = nil;
 							dxt_tex = nil;
                     	}
+					}
+                    else if (dxtTextureFormats[0] == HapTextureFormat_A_RGTC1)    {
+                        unsigned int        bytesPerRow = (unsigned int)(rgbDataSize/(NSUInteger)dxtImgSize.height);
+                        HapCodecSquishRGTC1DecodeAsAlphaOnly(dxtDatas[0], rgbData, bytesPerRow, dxtImgSize.width, dxtImgSize.height);
                     }
 					else	{
 						NSLog(@"\t\terr: unrecognized text formats %X/%x in %s",dxtTextureFormats[0],dxtTextureFormats[1],__func__);

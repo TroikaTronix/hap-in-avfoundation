@@ -15,8 +15,6 @@ Squish produces nicer results but takes longer.
 We select the GPU when the quality setting is above "High"
 YCoCg encodes YCoCg in DXT and requires a shader to draw, and produces very high quality results
 */
-// GLDXTEncoder removed — legacy OpenGL dependency eliminated
-// #include "GLDXTEncoder.h"
 #include "ATEBC7Encoder.h"
 #include "SquishEncoder.h"
 #include "YCoCg.h"

@@ -19,8 +19,6 @@
 		1A05360C1A38CA11005B47BD /* DXTBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0535FE1A38CA11005B47BD /* DXTBlocks.h */; };
 		1A05360D1A38CA11005B47BD /* DXTBlocksSSSE3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0535FF1A38CA11005B47BD /* DXTBlocksSSSE3.c */; };
 		1A05360E1A38CA11005B47BD /* DXTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536001A38CA11005B47BD /* DXTEncoder.h */; };
-		1A0536101A38CA11005B47BD /* GLDXTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536021A38CA11005B47BD /* GLDXTEncoder.h */; };
-		1A0536121A38CA11005B47BD /* HapCodecGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536041A38CA11005B47BD /* HapCodecGL.h */; };
 		1A0536131A38CA11005B47BD /* SquishEncoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536051A38CA11005B47BD /* SquishEncoder.c */; };
 		1A0536141A38CA11005B47BD /* SquishEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536061A38CA11005B47BD /* SquishEncoder.h */; };
 		1A0536151A38CA11005B47BD /* YCoCgDXT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536071A38CA11005B47BD /* YCoCgDXT.cpp */; };
@@ -115,8 +113,6 @@
 		1A6D0E5D207E49C9005CCB1A /* DXTBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0535FE1A38CA11005B47BD /* DXTBlocks.h */; };
 		1A6D0E5E207E49C9005CCB1A /* DXTBlocksSSSE3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0535FF1A38CA11005B47BD /* DXTBlocksSSSE3.c */; };
 		1A6D0E5F207E49C9005CCB1A /* DXTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536001A38CA11005B47BD /* DXTEncoder.h */; };
-		1A6D0E61207E49C9005CCB1A /* GLDXTEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536021A38CA11005B47BD /* GLDXTEncoder.h */; };
-		1A6D0E63207E49C9005CCB1A /* HapCodecGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536041A38CA11005B47BD /* HapCodecGL.h */; };
 		1A6D0E64207E49C9005CCB1A /* SquishEncoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536051A38CA11005B47BD /* SquishEncoder.c */; };
 		1A6D0E65207E49C9005CCB1A /* SquishEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0536061A38CA11005B47BD /* SquishEncoder.h */; };
 		1A6D0E66207E49C9005CCB1A /* YCoCgDXT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A0536071A38CA11005B47BD /* YCoCgDXT.cpp */; };
@@ -324,10 +320,6 @@
 		1A0535FE1A38CA11005B47BD /* DXTBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DXTBlocks.h; path = source/DXT/DXTBlocks.h; sourceTree = "<group>"; };
 		1A0535FF1A38CA11005B47BD /* DXTBlocksSSSE3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = DXTBlocksSSSE3.c; path = source/DXT/DXTBlocksSSSE3.c; sourceTree = "<group>"; };
 		1A0536001A38CA11005B47BD /* DXTEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DXTEncoder.h; path = source/DXT/DXTEncoder.h; sourceTree = "<group>"; };
-		1A0536011A38CA11005B47BD /* GLDXTEncoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = GLDXTEncoder.c; path = source/DXT/GLDXTEncoder.c; sourceTree = "<group>"; };
-		1A0536021A38CA11005B47BD /* GLDXTEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDXTEncoder.h; path = source/DXT/GLDXTEncoder.h; sourceTree = "<group>"; };
-		1A0536031A38CA11005B47BD /* HapCodecGL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HapCodecGL.c; path = source/DXT/HapCodecGL.c; sourceTree = "<group>"; };
-		1A0536041A38CA11005B47BD /* HapCodecGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HapCodecGL.h; path = source/DXT/HapCodecGL.h; sourceTree = "<group>"; };
 		1A0536051A38CA11005B47BD /* SquishEncoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = SquishEncoder.c; path = source/DXT/SquishEncoder.c; sourceTree = "<group>"; };
 		1A0536061A38CA11005B47BD /* SquishEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquishEncoder.h; path = source/DXT/SquishEncoder.h; sourceTree = "<group>"; };
 		1A0536071A38CA11005B47BD /* YCoCgDXT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = YCoCgDXT.cpp; path = source/DXT/YCoCgDXT.cpp; sourceTree = "<group>"; };
@@ -531,10 +523,6 @@
 				1A0535FE1A38CA11005B47BD /* DXTBlocks.h */,
 				1A0535FF1A38CA11005B47BD /* DXTBlocksSSSE3.c */,
 				1A0536001A38CA11005B47BD /* DXTEncoder.h */,
-				1A0536011A38CA11005B47BD /* GLDXTEncoder.c */,
-				1A0536021A38CA11005B47BD /* GLDXTEncoder.h */,
-				1A0536031A38CA11005B47BD /* HapCodecGL.c */,
-				1A0536041A38CA11005B47BD /* HapCodecGL.h */,
 				1A0536051A38CA11005B47BD /* SquishEncoder.c */,
 				1A0536061A38CA11005B47BD /* SquishEncoder.h */,
 				1A0536071A38CA11005B47BD /* YCoCgDXT.cpp */,
@@ -849,8 +837,6 @@
 				1A6D0E5D207E49C9005CCB1A /* DXTBlocks.h in Headers */,
 				1A6D0E5F207E49C9005CCB1A /* DXTEncoder.h in Headers */,
 				1A6D0E67207E49C9005CCB1A /* YCoCgDXT.h in Headers */,
-				1A6D0E61207E49C9005CCB1A /* GLDXTEncoder.h in Headers */,
-				1A6D0E63207E49C9005CCB1A /* HapCodecGL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,8 +871,6 @@
 				1A05360C1A38CA11005B47BD /* DXTBlocks.h in Headers */,
 				1A05360E1A38CA11005B47BD /* DXTEncoder.h in Headers */,
 				1A0536161A38CA11005B47BD /* YCoCgDXT.h in Headers */,
-				1A0536101A38CA11005B47BD /* GLDXTEncoder.h in Headers */,
-				1A0536121A38CA11005B47BD /* HapCodecGL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

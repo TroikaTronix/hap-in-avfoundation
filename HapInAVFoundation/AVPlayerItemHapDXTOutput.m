@@ -663,10 +663,18 @@ void HapMTDecode(HapDecodeWorkFunction function, void *p, unsigned int count, vo
 							if (mtlDecoder == nil)	{
 								if (self.cmdQueue == nil)	{
 									id<MTLDevice>		device = MTLCreateSystemDefaultDevice();
-									self.cmdQueue = [device newCommandQueue];
+									if (device == nil)	{
+										NSLog(@"\t\terr: MTLCreateSystemDefaultDevice() returned nil in %s", __func__);
+									}
+									else	{
+										self.cmdQueue = [device newCommandQueue];
+									}
 								}
-								mtlDecoder = [[HapMetalDXTDecoder alloc] initWithDevice:self.cmdQueue.device];
+								if (self.cmdQueue != nil)	{
+									mtlDecoder = [[HapMetalDXTDecoder alloc] initWithDevice:self.cmdQueue.device];
+								}
 							}
+							if (mtlDecoder != nil)	{
                     		id<MTLDevice>	device = self.cmdQueue.device;
 							
 							id<MTLCommandBuffer>	cmdBuffer = [self.cmdQueue commandBuffer];
@@ -747,6 +755,7 @@ void HapMTDecode(HapDecodeWorkFunction function, void *p, unsigned int count, vo
 							
 							rgba_buffer = nil;
 							dxt_tex = nil;
+							}
                     	}
 					}
                     else if (dxtTextureFormats[0] == HapTextureFormat_A_RGTC1)    {
@@ -774,7 +783,7 @@ void HapMTDecode(HapDecodeWorkFunction function, void *p, unsigned int count, vo
 	//	run the post-decode block (if there is one).  note that this is run even if the decode is unsuccessful...
 	if (localPostDecodeBlock!=nil)
 		localPostDecodeBlock(n);
-	
+
 	//[n release];
 }
 

@@ -9,10 +9,7 @@
 #include "DXTEncoder.h"
 #include "ImageMath.h"
 /*
-On Apple we support GL encoding using the GPU.
-The GPU is very fast but produces low quality results
-Squish produces nicer results but takes longer.
-We select the GPU when the quality setting is above "High"
+DXT encoding uses the Squish library (CPU).
 YCoCg encodes YCoCg in DXT and requires a shader to draw, and produces very high quality results
 */
 #include "ATEBC7Encoder.h"
@@ -339,15 +336,10 @@ NSString *const			AVFallbackFPSKey = @"AVFallbackFPSKey";
 			}
 		}
 		
-		//	prevent multiple slices from being used if we're using a GL encoder
 		switch (exportCodecType)	{
 			case kHapCodecSubType:
 			case kHapAlphaCodecSubType:
 			{
-				if (!exportHighQualityFlag)	{
-					exportSliceCount = 1;
-					exportSliceHeight = exportDXTImgSize.height;
-				}
 				break;
 			}
 			case kHapYCoCgCodecSubType:

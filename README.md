@@ -1,7 +1,7 @@
 HapInAVFoundation Framework
 ==========
 
-> TroikaTronix note: this private mirror includes local modifications documented in [TROIKATRONIX_README.md](TROIKATRONIX_README.md).
+> TroikaTronix note: this public mirror includes local modifications documented in [TROIKATRONIX_README.md](TROIKATRONIX_README.md).
 
 Hap is a video codec for fast decompression on modern graphics hardware. This is the home of the HapInAVFoundation framework. For general information about Hap, see [the Hap project][1].
 

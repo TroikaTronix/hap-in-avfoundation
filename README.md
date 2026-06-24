@@ -1,6 +1,8 @@
 HapInAVFoundation Framework
 ==========
 
+> TroikaTronix note: this private mirror includes local modifications documented in [TROIKATRONIX_README.md](TROIKATRONIX_README.md).
+
 Hap is a video codec for fast decompression on modern graphics hardware. This is the home of the HapInAVFoundation framework. For general information about Hap, see [the Hap project][1].
 
 The HapInAVFoundation framework supports encoding and decoding Hap video. Unlike the QuickTime codec, the HapInAVFoundation framework will only decode to S3TC/DXT frames suitable for upload to graphics hardware at this time.  If requested, decoding to RGB(A) pixel formats can be added.  Encoding RGB(A) frames is supported.  For the most part, this is a port of the hap quicktime codec.

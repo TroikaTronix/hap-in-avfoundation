@@ -104,6 +104,12 @@ target_compile_definitions(HapInAVFoundation PRIVATE
     $<$<NOT:$<CONFIG:Debug>>:NDEBUG=1>
 )
 
+# ARC: the Xcode target sets CLANG_ENABLE_OBJC_ARC=YES; the ObjC sources rely on it.
+# Without ARC the decoder's frame arrays are never retained, freed early, and their
+# slots get reused -> "unrecognized selector" crash decoding HAP frames (#234).
+target_compile_options(HapInAVFoundation PRIVATE
+    $<$<COMPILE_LANGUAGE:OBJC,OBJCXX>:-fobjc-arc>)
+
 target_link_libraries(HapInAVFoundation PRIVATE
     "-framework Foundation" "-framework AVFoundation" "-framework CoreMedia"
     "-framework CoreVideo" "-framework CoreFoundation" "-framework Metal"

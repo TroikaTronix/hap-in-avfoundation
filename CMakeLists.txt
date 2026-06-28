@@ -113,7 +113,9 @@ target_compile_options(HapInAVFoundation PRIVATE
 target_link_libraries(HapInAVFoundation PRIVATE
     "-framework Foundation" "-framework AVFoundation" "-framework CoreMedia"
     "-framework CoreVideo" "-framework CoreFoundation" "-framework Metal"
-    "-framework IOSurface" "-framework QuartzCore" "-framework Accelerate")
+    "-framework IOSurface" "-framework QuartzCore" "-framework Accelerate"
+    # ATEBC7Encoder.c calls at_encoder_* from AppleTextureEncoder (libate)
+    "-late")
 
 set(HAP_PUBLIC_HEADERS
     "${HERE}/HapInAVFoundation/HapInAVFoundation.h"

@@ -147,3 +147,21 @@ set_target_properties(HapInAVFoundation PROPERTIES
 # Prefix header injected portably (Xcode-attribute-only would be ignored by ninja).
 target_compile_options(HapInAVFoundation PRIVATE
     -include "${HERE}/source/HapInAVFoundation_Prefix.pch")
+
+# Metal shader -> default.metallib in the framework's Resources. HapMetalDXTDecoder
+# loads it with newDefaultLibraryWithBundle:, and the DXT->RGB conversion runs
+# through it for every block-compressed format -- without the metallib the decoder
+# silently produces black frames (#256).
+set(HAP_METAL_SRC "${HERE}/source/DXT/HapMetalBC7toRGBA.metal")
+set(HAP_METAL_AIR "${CMAKE_CURRENT_BINARY_DIR}/HapMetalBC7toRGBA.air")
+set(HAP_METALLIB "${CMAKE_CURRENT_BINARY_DIR}/default.metallib")
+add_custom_command(OUTPUT "${HAP_METALLIB}"
+    COMMAND xcrun -sdk macosx metal -c "${HAP_METAL_SRC}" -o "${HAP_METAL_AIR}"
+    COMMAND xcrun -sdk macosx metallib "${HAP_METAL_AIR}" -o "${HAP_METALLIB}"
+    DEPENDS "${HAP_METAL_SRC}"
+    COMMENT "Compiling HapInAVFoundation default.metallib")
+add_custom_target(HapMetalLib DEPENDS "${HAP_METALLIB}")
+add_dependencies(HapInAVFoundation HapMetalLib)
+add_custom_command(TARGET HapInAVFoundation POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_BUNDLE_CONTENT_DIR:HapInAVFoundation>/Resources"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "${HAP_METALLIB}" "$<TARGET_BUNDLE_CONTENT_DIR:HapInAVFoundation>/Resources/default.metallib")
